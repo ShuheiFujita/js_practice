@@ -1,0 +1,58 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+
+    <body> 
+        <script> 
+        // confirmダイアログ
+        var flg; // ダイアログの真偽を格納する変数
+        
+        flg = confirm("背景色を変更しますか？");
+        
+        if (flg) {
+            document.bgColor = "green";
+        }
+        
+        // 正誤クイズを作成する
+        var question = new Array(
+        "水を電気分解すると水素と酸素が出る。",
+        "地球上で最も多い元素は炭素である。",
+        "金の元素記号はGdである。",
+        "血液は骨の内部で作られる。",
+        "動物細胞に細胞壁は無い。"
+        );
+        
+        // 答えを配列に入れる
+        var answer = new Array(
+        true,
+        false,
+        false,
+        true,
+        true
+        );
+        
+        // 問題を出題する関数を作成する
+        function quiz() {
+            var score = 0; // 正解数を格納する変数
+            
+            // 問題出題
+            for (var i = 0;i < 5;i++ ) {
+                if (confirm(question[i]) == answer[i]) {
+                    score = score + 20;
+                }
+            }
+            
+            // 採点
+            alert("あなたは"+ score +"点でした。");
+        }
+        
+        quiz();
+        
+        </script>
+    </body> 
+</html> 
+ 

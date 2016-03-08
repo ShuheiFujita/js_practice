@@ -1,0 +1,41 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+
+    <body> 
+        <script> 
+        // for文1		
+        for (var i = 0; i<10; i++ ) {
+            document.write("10回繰り返し<br>");
+        }
+        
+        // for文2(表を作成する)
+        var rank = 1;
+        
+        var mountain = new Array(
+        "富士山",
+        "白根山",
+        "奥穂高岳",
+        "間ノ岳",
+        "槍ヶ岳"
+        );
+        
+        document.write('<table border="3">');
+        
+        for (var i=0; i<5; i++) {
+            document.write('<tr>');
+            document.write('<td>' + rank + '位</td>');
+            document.write('<td>' + mountain[i] + '</td>');
+            document.write('</tr>');
+            rank++;
+        }
+        
+        document.write('</table>');
+        </script>
+    </body> 
+</html> 
+ 

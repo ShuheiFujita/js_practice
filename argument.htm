@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+    <body> 
+        <script> 
+        // 引数を持った関数1
+        function square(a) {
+            return a + "の2乗は、" + a*a + "です。";
+        }
+        
+        document.write(square(2) + "<br>");
+        document.write(square(5) + "<br>");
+        
+        // 引数を持った関数2
+        function area (w, h) {
+            var str = "幅" + w + "m、高さ" + h + "mの長方形の面積は"
+            return str + w*h + "平方メートルです。";
+        }
+        
+        document.write(area(5,12));
+        </script>
+    </body> 
+</html> 
+ 

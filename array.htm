@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+    <body> 
+        <script> 
+        // 配列		
+        // 曜日を配列に格納
+        var yobi = new Array();
+        
+        yobi[0] = "日曜日";
+        yobi[1] = "月曜日";
+        yobi[2] = "火曜日";
+        yobi[3] = "水曜日";
+        yobi[4] = "木曜日";
+        yobi[5] = "金曜日";
+        yobi[6] = "土曜日";
+        
+        var today = new Date(); // 日付オブジェクト呼び出し
+        var week = today.getDay(); // getDay()で曜日を取得
+
+        document.write("今日は、" + yobi[week] +"です。");
+        
+        </script>
+    </body> 
+</html> 
+ 

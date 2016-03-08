@@ -1,0 +1,26 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+    <body> 
+        <script> 
+        // インプットボックス
+        var name;
+        
+        name = prompt("お名前を教えてください。","");
+        
+        if(name == "" || name == null){
+            name = "名無しの権兵衛";
+        }
+        
+        // 入力された名前の表示
+        document.write("<center>");
+        document.write("ようこそ、<b>" + name + "</b>さん。");
+        document.write("</center>");
+        </script>
+    </body> 
+</html> 
+ 

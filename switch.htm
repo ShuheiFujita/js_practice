@@ -1,0 +1,27 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head>
+
+    <body> 
+        <script> 
+        // switch文
+        var today = new Date(); // 日付オブジェクト呼び出し
+        var week = today.getDay(); // getDay()で曜日を取得
+        
+        switch (week) {
+            case 0: document.write("今日は日曜日です。"); break;
+            case 1: document.write("今日は月曜日です。"); break;
+            case 2: document.write("今日は火曜日です。"); break;
+            case 3: document.write("今日は水曜日です。"); break;
+            case 4: document.write("今日は木曜日です。"); break;
+            case 5: document.write("今日は金曜日です。"); break;
+            default: document.write("今日は土曜日です。"); break;
+        }
+        
+        </script>
+    </body> 
+</html> 
+ 
