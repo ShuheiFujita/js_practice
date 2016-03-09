@@ -1,0 +1,26 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+
+    <body> 
+        <form>
+           <input type="button" value="googleへ" id="link" >
+         </form>
+        
+        <script> 
+        // リンク履歴を残さない（ロケーションの入れ替え）
+        function goTop() {
+            location.replace("http://www.google.co.jp/");
+        }
+        
+        var p = document.getElementById("link");
+        
+        p.addEventListener("click",goTop,false);
+        </script>
+    </body> 
+</html> 
+ 

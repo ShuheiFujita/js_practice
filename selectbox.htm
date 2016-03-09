@@ -1,0 +1,49 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+
+    <body> 
+        <form name="navi">
+            <select name="contents" id="list">
+                <option>コンテンツ一覧</option>
+                <option>google</option>
+                <option>yahoo(ホーム)</option>
+                <option>yahoo(スポーツ)</option>
+            </select>
+        </form>
+        
+        <script> 
+        var UrlArray = new Array(
+        "",
+        "http://www.google.co.jp/",
+        "http://www.yahoo.co.jp/",
+        "http://sports.yahoo.co.jp/",
+        );
+        
+        // リンク先へジャンプさせる関数
+        function selectNavi() {
+            var num;
+            
+            // 何番目が選択されたか？
+            num = document.navi.contents.selectedIndex;
+            
+            alert(num); // debug
+            
+            // リンク先へジャンプ
+            if ( num != 0 ) {
+                location.href = UrlArray[num];
+            }
+        }
+        
+        var p = document.getElementById("list");
+        
+        p.addEventListener('change',selectNavi,false);
+        
+        </script>
+    </body> 
+</html> 
+ 

@@ -1,0 +1,39 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+
+    <body> 
+        <form>
+           <input type="button" value="戻る" id="back" >
+           <input type="button" value="進む" id="forward">
+           <input type="button" value="更新" id="update">
+        </form>
+        
+        <script> 
+　　　　    // back
+            function back() {
+                history.back();
+	    }
+            // forward
+            function forward() {
+                history.forward();
+	    }
+            // update 
+            function update() {
+                location.reload();
+	    }
+            var b = document.getElementById("back");
+            var f = document.getElementById("forward");
+            var u = document.getElementById("update");
+
+            b.addEventListener('click', back, false); 
+            f.addEventListener('click', forward, false); 
+            u.addEventListener('click', update, false); 
+        </script>
+    </body> 
+</html> 
+ 

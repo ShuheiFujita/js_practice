@@ -1,0 +1,27 @@
+<!doctype html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>javascript practice</title> 
+    </head> 
+
+
+    <body> 
+    	<form>
+    		<input type="button" id="link_button" value="googleへ">
+    	</form>
+        <script> 
+		function jump() {
+			if (confirm("googleに飛びますか？")  == true) {
+				//OKの場合は、ジャンプ！
+				location.href = "http://www.google.co.jp/";
+			}
+		}
+		
+		var p = document.getElementById("link_button");
+		
+		p.addEventListener('click',jump,false);
+        </script>
+    </body> 
+</html> 
+ 
