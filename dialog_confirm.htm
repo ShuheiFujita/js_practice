@@ -36,19 +36,21 @@
         );
         
         // 問題を出題する関数を作成する
-        function quiz() {
-            var score = 0; // 正解数を格納する変数
-            
-            // 問題出題
-            for (var i = 0;i < 5;i++ ) {
-                if (confirm(question[i]) == answer[i]) {
-                    score = score + 20;
+        setTimeout(
+            function quiz() {
+                var score = 0; // 正解数を格納する変数
+                
+                // 問題出題
+                for (var i = 0;i < 5;i++ ) {
+                    if (confirm(question[i]) == answer[i]) {
+                        score = score + 20;
+                    }
                 }
+                
+                // 採点
+                alert("あなたは"+ score +"点でした。");
             }
-            
-            // 採点
-            alert("あなたは"+ score +"点でした。");
-        }
+        ,3000);
         
         quiz();
         
