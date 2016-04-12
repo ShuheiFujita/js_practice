@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <style>
+            h1 {
+                font-size: 1.25rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+                color: #cc0000;
+            }
+        </style>
+        <dl>
+            <dt>あなた</dt>
+            <dd>(こころの)HP:<span id="hp">120</span></dd>
+        </dl>
+
+        <h1 id="message">ふと見ると、公園のベンチに若い男が座っていました<br>
+        (メニューから選んで、数値で入力してください。)</h1>
+        <h2 id="damage"></h2>
+
+        <ul>
+            <li>１：戦う</li>
+            <li>２：闘う</li>
+            <li>３：逃げる</li>
+        </ul>
+        
+        <input type="text" id="Selection">
+        <button id="run">アクション!!</button>
+
+        <script>
+            document.getElementById("run").addEventListener("click", function(){
+                // 選択肢の入力値を取得
+                var action = document.getElementById("Selection").value;
+
+                // DOM選択
+                var messageElement = document.getElementById("message");
+                var hpElement = document.getElementById("hp");
+                var damageElement = document.getElementById("damage");
+
+                // メッセージ
+                var message = "";
+
+                // 現在のHP
+                var hp = parseInt(hpElement.innerText);
+
+
+                //
+                if ( action == "1") {
+                    message = "腰が抜けた";
+                    damageElement.innerText = "40のダメージをうけた";
+                    hp = hp - 40;
+                } else if ( action == "2") {
+                    message = "イオナズン";
+                    damageElement.innerText = "80のダメージをうけた";
+                    hp = hp - 80;
+               } else if ( action == "3") {
+                    message = "逃げるな";$
+                    damageElement.innerText = "20のダメージをうけた"; 
+                    hp = hp - 20;$
+               } else {
+                    message = "入力不可";
+               }
+
+               if (hp <= 0) {
+                    message = "しんでしまうとは情けない";
+                    hp = 120;
+               }
+
+               messageElement.innerText = message;
+               hpElement.innerText = hp;
+          });
+
+        </script>
+    </body>
+</html
+

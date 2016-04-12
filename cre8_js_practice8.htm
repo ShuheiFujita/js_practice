@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <style>
+            h1 {
+                font-size: 1.25rem;
+            }
+            .damage {
+                color: #cc0000;
+            }
+            .underZero {
+                font-size: .75rem;
+            }
+        </style>
+
+        <dl>
+            <dt>あなた</dl>
+            <dd>(肉体的な)HP: <span id="hp">320</span></dd>
+        </dl>
+        <hl id="message">ふとみると、公園のベンチにおめがうぇぽんがすわっていました</hl>
+
+        <button data-action="attack">闘う</button>
+        <button data-action="superSkill">超☆必殺</button>
+        <button data-action="megante">メガンテ</button>
+
+        <script>
+            // アクションボタン
+            var buttons = document.getElementsByTagName("button");
+
+            // DOM選択
+            var messageElement = document.getElementById("message");
+            var hpElement = document.getElementById("hp");
+            var damageElement = document.getElementById("damage");
+
+            //現在のHP
+            var hp = parseInt(hpElement.innerText);
+            
+            /*データ形式*/
+            // アクション：[ダメージ、メッセージ]
+            var  data = {
+                attack: [80, "持病の腰痛が！!"],
+                superSkill: [280, "メタボtheパワーで自分へダメージ!!"],
+                megante: [999, "あぁ^~"]
+            };
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener("click", function() {
+                    var action = this.dataset.action;
+                    var damage = data[action][0];
+                    var message = data[action][1];
+
+                    hp = hp - damage;
+
+                    message = message + '<p class="damage">' + damage + "ポイントのダメージをうけた";
+
+                    if (hp <= -3000) {
+                        message = message + '<p class="underZero">さすがにマイナス3000は死んでるかも</p>';
+                    } else if (hp <= 0) {
+                        message = message + '<p class="underZero">HPがマイナスでもまだ行ける</p>';
+                    }
+
+                    messageElement.innerHTML = message;
+                    hpElement.innerText = hp;
+                });
+            };
+        </script>
+    </body>
+</html
+
